@@ -1,0 +1,12 @@
+devices:
+  - ip: "192.168.56.101"
+    device_type: "cisco_ios"
+    username: "admin"
+    password: "cisco"
+    command: "show ip interface brief"
+
+  - ip: "192.168.56.102"
+    device_type: "linux"
+    username: "root"
+    password: "toor"
+    command: "ifconfig"

@@ -1,0 +1,10 @@
+devices:
+  - ip: "192.168.56.101"
+    driver: "ios"
+    username: "admin"
+    password: "cisco"
+
+  - ip: "192.168.56.102"
+    driver: "ios"
+    username: "admin"
+    password: "cisco"
