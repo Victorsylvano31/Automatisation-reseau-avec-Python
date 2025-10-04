@@ -1,43 +1,57 @@
-import subprocess
-import pandas as pd
-from datetime import datetime
-from pathlib import Path
-import matplotlib.pyplot as plt
 import yaml
+import os
+from datetime import datetime
+from napalm import get_network_driver
+import argparse
 
-REPORTS = Path("reports")
-REPORTS.mkdir(exist_ok=True)
+# Analyse des arguments
+parser = argparse.ArgumentParser(description="Moniteur réseau avec NAPALM")
+parser.add_argument("--inventory", default="devices.yaml", help="Chemin vers devices.yaml")
+args = parser.parse_args()
+inventory_file = args.inventory
 
-def check_ping(ip):
+# Vérification et chargement de l'inventaire
+if not os.path.exists(inventory_file):
+    print("Fichier devices.yaml manquant ! Créez-le avec cette structure :")
+    print("""
+    devices:
+      - ip: "192.168.1.1"
+        username: "admin"
+        password: "cisco123"
+        driver: "ios"
+    """)
+    raise FileNotFoundError("Fichier devices.yaml manquant !")
+
+with open(inventory_file) as f:
     try:
-        res = subprocess.run(["ping", "-c", "1", "-W", "1", ip],
-                             stdout=subprocess.DEVNULL,
-                             stderr=subprocess.DEVNULL)
-        return res.returncode == 0
-    except Exception:
-        return False
+        inventory = yaml.safe_load(f)
+    except yaml.YAMLError as e:
+        raise ValueError(f"Erreur dans {inventory_file} : {e}")
 
-with open("devices.yaml") as f:
-    inventory = yaml.safe_load(f)
+# Créer dossier backup
+os.makedirs("backups", exist_ok=True)
 
-data = []
 for dev in inventory["devices"]:
-    ip = dev["ip"]
-    status = check_ping(ip)
-    data.append({"ip": ip, "status": "UP" if status else "DOWN", "time": datetime.now()})
+    print(f"🔎 Connexion à {dev['ip']} ...")
+    try:
+        driver = get_network_driver(dev["driver"])
+        device = driver(
+            hostname=dev["ip"],
+            username=dev["username"],
+            password=dev["password"]
+        )
+        device.open()
 
-df = pd.DataFrame(data)
+        facts = device.get_facts()
+        print(f"✅ {facts['hostname']} ({facts['vendor']}) - uptime {facts['uptime']}s")
 
-# Générer un rapport CSV
-csv_file = REPORTS / "availability.csv"
-df.to_csv(csv_file, index=False)
-print(f"💾 Rapport CSV : {csv_file}")
+        config = device.get_config()
+        filename = f"backups/{dev['ip']}_{datetime.now().strftime('%Y%m%d_%H%M%S')}.cfg"
+        with open(filename, "w") as f:
+            f.write(config["running"])
+        print(f"💾 Config sauvegardée dans {filename}")
 
-# Générer graphique
-plt.figure(figsize=(6, 4))
-df["status"].value_counts().plot(kind="bar", color=["green", "red"])
-plt.title("Disponibilité réseau")
-plt.xlabel("Status")
-plt.ylabel("Nombre d'équipements")
-plt.savefig(REPORTS / "availability.png")
-print(f"📊 Graphique généré : {REPORTS}/availability.png")
+        device.close()
+
+    except Exception as e:
+        print(f"⚠️ Erreur sur {dev['ip']}: {e}")
