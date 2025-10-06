@@ -160,14 +160,3 @@ devices:
 | 2        | Collecte et supervision avec NAPALM          | `collect.py` et `monitor.py` | Configurations `.cfg` + rapport `.png` |
 
 ---
-
-Auteur : Sylvano Victor
-Encadrement : Mentor IA & Réseaux
-Objectif : Automatiser la gestion réseau avec Python
-
-```
-
----
-
-Souhaites-tu que je t’en fasse **la version complète prête à coller dans ton dépôt GitHub (avec les sauts de ligne et l’encodage Markdown corrigé)** ?
-```
