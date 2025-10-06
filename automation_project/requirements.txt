@@ -1,0 +1,16 @@
+# Dépendances Python pour les exercices d'automatisation réseau
+
+# Automatisation et SSH
+netmiko
+napalm
+
+# Utilitaires
+pythonping
+pyyaml
+
+# Monitoring et reporting
+pandas
+matplotlib
+
+# Optionnel mais utile pour affichage amélioré
+rich
