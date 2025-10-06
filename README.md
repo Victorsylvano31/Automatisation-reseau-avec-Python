@@ -143,7 +143,7 @@ devices:
 
 ---
 
-## 6. Conseils
+## 6. a verifier
 
 * Vérifiez que vos routeurs ou VMs répondent au ping et que le service SSH est activé.
 * Si vous utilisez GNS3, assurez-vous que les routeurs sont sur le même réseau que votre machine hôte.
