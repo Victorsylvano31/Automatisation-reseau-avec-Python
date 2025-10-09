@@ -1,0 +1,24 @@
+# Configuration de test pour les equipements
+devices:
+  test_router_1:
+    hostname: "192.168.1.100"
+    device_type: "cisco_ios"
+    username: "testuser"
+    password: "testpass"
+    secret: "testsecret"
+    timeout: 10
+
+  test_switch_1:
+    hostname: "192.168.1.101"
+    device_type: "cisco_ios"
+    username: "testuser"
+    password: "testpass"
+    secret: "testsecret"
+    timeout: 10
+
+global_settings:
+  backup_dir: "test_backups"
+  report_dir: "test_reports"
+  log_dir: "test_logs"
+  default_timeout: 10
+  max_threads: 5

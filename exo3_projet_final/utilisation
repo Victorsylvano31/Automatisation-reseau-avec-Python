@@ -1,0 +1,14 @@
+# Découverte réseau
+python main.py --discover --scan-subnet "192.168.1.0/24"
+
+# Collecte des données
+python main.py --collect --backup
+
+# Monitoring
+python main.py --monitor --duration 300
+
+# Rapports
+python main.py --report
+
+# Mode dry-run (test)
+python main.py --collect --dry-run

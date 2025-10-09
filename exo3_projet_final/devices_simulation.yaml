@@ -1,0 +1,13 @@
+devices:
+  simulation_router:
+    hostname: "simulation"
+    device_type: "cisco_ios" 
+    username: "sim"
+    password: "sim"
+    timeout: 1
+
+global_settings:
+  backup_dir: "backups"
+  report_dir: "reports"
+  log_dir: "logs"
+  default_timeout: 1

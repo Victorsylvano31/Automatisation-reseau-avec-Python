@@ -1,0 +1,24 @@
+# Exemple de configuration - Copiez ce fichier en devices.yaml et modifiez les valeurs
+devices:
+  mon_routeur:
+    hostname: "192.168.1.1"
+    device_type: "cisco_ios"
+    username: "admin"
+    password: "votre_mot_de_passe"
+    secret: "votre_secret"
+    timeout: 30
+
+  mon_switch:
+    hostname: "192.168.1.2"
+    device_type: "cisco_ios"
+    username: "admin"
+    password: "votre_mot_de_passe"
+    secret: "votre_secret"
+    timeout: 30
+
+global_settings:
+  backup_dir: "backups"
+  report_dir: "reports"
+  log_dir: "logs"
+  default_timeout: 30
+  max_threads: 50

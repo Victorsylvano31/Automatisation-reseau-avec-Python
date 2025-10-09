@@ -1,0 +1,19 @@
+# Network Automation App
+
+Application complète d'automatisation réseau avec Python pour la découverte, monitoring et gestion des équipements réseau.
+
+## Fonctionnalités
+
+- Découverte automatique des équipements réseau
+- Collecte des données (interfaces, configuration, performance)
+- Sauvegarde automatique des configurations
+- Monitoring temps réel
+- Génération de rapports et dashboards
+- Déploiement de configurations
+
+## Installation
+
+```bash
+git clone https://github.com/Victorsylvano31/Automatisation-reseau-avec-Python.git
+cd exo3_projet_final
+pip install -r requirements.txt

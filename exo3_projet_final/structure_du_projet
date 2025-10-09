@@ -1,0 +1,27 @@
+NetworkAutomationApp/
+├── README.md
+├── requirements.txt
+├── devices.yaml
+├── main.py
+├── config.py
+├── modules/
+│   ├── __init__.py
+│   ├── discovery.py
+│   ├── napalm_utils.py
+│   ├── monitoring.py
+│   ├── reports.py
+│   └── utils.py
+├── dashboards/
+│   ├── __init__.py
+│   └── plotly_dash_app.py
+├── tests/
+│   ├── __init__.py
+│   ├── test_discovery.py
+│   ├── test_napalm_utils.py
+│   └── test_monitoring.py
+├── backups/
+│   └── .gitkeep
+├── reports/
+│   └── .gitkeep
+└── logs/
+    └── .gitkeep

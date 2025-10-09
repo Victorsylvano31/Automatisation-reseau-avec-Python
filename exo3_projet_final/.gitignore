@@ -1,0 +1,38 @@
+# Fichiers generes par l'application
+backups/
+reports/
+logs/
+*.log
+*.cfg
+
+# Fichiers de configuration sensibles
+devices.yaml
+*_config.txt
+
+# Fichiers Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Tests
+test_*
+pytest_cache/
+.coverage
+htmlcov/
