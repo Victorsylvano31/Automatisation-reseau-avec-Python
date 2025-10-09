@@ -19,3 +19,6 @@ python install.py  ## (pas encore utilisable)
 # Ou installation manuelle
 pip install -r requirements.txt
 
+# Lance ce commande pour execute le projet
+python main.py --dry-run --collect --backup --report
+
