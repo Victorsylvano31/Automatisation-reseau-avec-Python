@@ -1,6 +1,6 @@
 # Projet d'automatisation réseau avec Python
 
-Ce projet contient deux exercices pratiques pour apprendre à automatiser la gestion et la surveillance des équipements réseau avec Python.
+Ce projet contient deux exercices pratiques pour automatiser la gestion et la surveillance des équipements réseau avec Python.
 
 ---
 
