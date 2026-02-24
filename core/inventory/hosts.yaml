@@ -1,0 +1,47 @@
+---
+# ============================================================
+# Inventaire Réseau — NRE Platform V2
+# ============================================================
+# Remplacez les valeurs par celles de vos vrais équipements.
+# Format : un équipement par bloc.
+#
+# Champs obligatoires : hostname, groups
+# Champs optionnels  : data (métadonnées libres)
+# ============================================================
+
+# --- Cisco IOS Exemple ---
+# router_core_paris:
+#   hostname: "192.168.1.1"
+#   groups:
+#     - cisco_ios
+#   data:
+#     site: "paris"
+#     role: "core"
+
+# --- Cisco NX-OS Exemple ---
+# switch_dc1:
+#   hostname: "10.0.0.2"
+#   groups:
+#     - nxos
+#   data:
+#     site: "datacenter"
+#     role: "leaf"
+
+# --- Juniper Exemple ---
+# router_border:
+#   hostname: "10.0.0.100"
+#   groups:
+#     - junos
+#   data:
+#     site: "bordeaux"
+#     role: "border"
+
+# --- DÉBUT DE VOTRE INVENTAIRE RÉEL ---
+# Décommentez et remplissez les blocs ci-dessous :
+
+# mon_routeur1:
+#   hostname: "192.168.X.X"
+#   groups:
+#     - cisco_ios
+#   data:
+#     site: "mon_site"

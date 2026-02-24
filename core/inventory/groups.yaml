@@ -1,0 +1,8 @@
+---
+cisco_ios:
+  platform: "ios"
+  connection_options:
+    scrapli:
+      port: 22
+      extras:
+        auth_strict_key: false

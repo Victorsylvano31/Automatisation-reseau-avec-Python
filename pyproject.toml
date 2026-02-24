@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "nre-platform"
+version = "0.1.0"
+description = "Plateforme d'automatisation réseau moderne"
+authors = ["Tafita Raijjoana"]
+readme = "README.md"
+packages = [{include = "nre_platform"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+fastapi = "^0.110.0"
+uvicorn = "^0.27.1"
+nornir = "^3.4.1"
+nornir-scrapli = "^2023.7.30"
+nornir-napalm = "^0.4.0"
+nornir-netbox = "^0.2.1"
+sqlalchemy = "^2.0.27"
+psycopg2-binary = "^2.9.9"
+celery = "^5.3.6"
+redis = "^5.0.1"
+typer = "^0.9.0"
+pydantic-settings = "^2.2.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
