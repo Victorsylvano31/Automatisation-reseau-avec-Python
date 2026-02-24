@@ -1,10 +1,10 @@
-# 🚀 NRE Platform V2 — Network Automation Platform
+#  NRE Platform V2 — Network Automation Platform
 
 Bienvenue dans la version 2.0 de ta plateforme d'automatisation réseau. Ce projet a été transformé d'un ensemble de scripts séquentiels en une application moderne, asynchrone et pilotée par API.
 
 ---
 
-## 🏗️ Architecture Globale
+## Architecture Globale
 
 La plateforme repose sur une architecture découplée en trois couches :
 
@@ -14,7 +14,7 @@ La plateforme repose sur une architecture découplée en trois couches :
 
 ---
 
-## 📂 Structure du Projet
+##  Structure du Projet
 
 ```text
 nre_platform/
@@ -36,7 +36,7 @@ nre_platform/
 
 ---
 
-## 🛠️ Stack Technique
+##  Stack Technique
 
 *   **Backend** : Python 3.10+, FastAPI, Nornir 3.x, Scrapli, SQLAlchemy (SQLite), Celery (Eager mode).
 *   **Frontend** : React 18, Vite 5, Axios, Framer Motion (animations), Lucide React (icônes).
@@ -44,7 +44,7 @@ nre_platform/
 
 ---
 
-## 🚀 Comment l'utiliser
+##  Comment l'utiliser
 
 ### 1. Prérequis
 Assure-toi d'avoir installé les dépendances :
@@ -80,7 +80,7 @@ python cli/main.py status <JOB_ID>
 
 ---
 
-## ⚙️ Configuration de l'Inventaire
+##  Configuration de l'Inventaire
 
 Pour ajouter tes vrais équipements :
 1. Ouvre `core/inventory/hosts.yaml`.
@@ -89,13 +89,10 @@ Pour ajouter tes vrais équipements :
 
 ---
 
-## 🗺️ Roadmap & Améliorations Futures
+##  Roadmap & Améliorations Futures
 
 *   **NetBox Integration** : Remplacer les fichiers YAML par NetBox comme Source of Truth.
 *   **Monitoring Temps Réel** : Ajouter des sondes SNMP/Telemetry via Nornir.
 *   **Logs Interactifs** : Afficher le flux SSH en direct dans le Dashboard via WebSockets.
 *   **Multi-Constructeurs** : Ajouter des profils pour Arista, Palo Alto et F5.
 
----
-
-**Développé avec 🦾 par ton assistant IA pour une infrastructure plus robuste.**
